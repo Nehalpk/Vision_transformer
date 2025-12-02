@@ -1,0 +1,12 @@
+============================================================
+LESION COVERAGE ESTIMATION RESULTS
+============================================================
+
+Lesion Area:        68,111 pixels
+Total Image Area:   270,000 pixels
+Coverage:           25.23%
+Recommended Patch:  16×16
+Number of Patches:  1036
+
+Medium lesions → 16×16 patches (balanced resolution and efficiency)
+============================================================
