@@ -207,36 +207,32 @@ def save_results_to_text(results, filename='lesion_coverage_results.txt'):
     print(f"✓ Results saved to: {filename}")
 
 
-# Example usage
+
 if __name__ == "__main__":
-    # Replace with your image path
+   
     image_path = "/home/nehal/workspace/cancer_classification/train/BCC/ISIC_0024332.jpg.jpg"
 
-    
-    # Check if file exists
+ 
     if not Path(image_path).exists():
         print(f"Please update the image_path variable with your JPG file path.")
         print(f"Current path '{image_path}' does not exist.")
     else:
-        # Process the image
+    
         results = estimate_lesion_coverage(image_path)
         
-        # Visualize and save results (no display to avoid Qt issues)
+       
         visualize_results(results, save_to_file=True, display=False)
         
-        # Save results to text file
+     
         save_results_to_text(results)
         
-        # Save the final mask
         cv2.imwrite('lesion_mask.png', results['images']['final_mask'])
         print(f"✓ Lesion mask saved to: lesion_mask.png")
         
-        # Quick summary
+  
         print(f"\n{'='*60}")
         print(f"QUICK SUMMARY:")
         print(f"  Coverage: {results['coverage_percentage']:.2f}%")
         print(f"  Patch Size: {results['patch_size']}×{results['patch_size']}")
         print(f"  Num Patches: {results['num_patches']}")
         print(f"{'='*60}")
-
-# Example usage
