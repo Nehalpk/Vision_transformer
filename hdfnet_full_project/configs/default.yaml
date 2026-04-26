@@ -1,0 +1,58 @@
+seed: 42
+output_dir: runs/hdfnet_skin_lesion
+classes: [BKL, MEL, NV, BCC]
+image_size: 150
+pad_size: 160
+num_channels: 3
+split:
+  train: 0.80
+  val: 0.10
+  test: 0.10
+  stratify_by_source: true
+# Cross-validation settings. The paper tables describe 4-fold CV for DP-ViT;
+# 10-fold CV for final HDFNet generalization.
+kfold:
+  n_splits: 4
+  stratify_by_source: true
+augmentation:
+  minority_threshold: 0.25
+training:
+  batch_size_cnn: 16
+  batch_size_vit: 32
+  batch_size_fusion: 16
+  epochs_cnn: 50
+  epochs_vit: 3
+  epochs_fusion: 50
+  lr: 0.0001
+  dropout: 0.1
+  early_stopping_patience: 12
+  weight_decay: 0.0
+vit:
+  patch_sizes: [8, 16, 32]
+  coverage_thresholds: [0.25, 0.50]
+  hidden_dim: 512
+  mlp_dim: 3072
+  num_layers: 12
+  num_heads: 4
+  dropout: 0.1
+vgg:
+  dense_units: [4096, 4096, 512]
+  dropout: 0.1
+resnet:
+  pretrained: true
+  dropout: 0.1
+hdfnet:
+  hidden_units: 1024
+  dropout: 0.1
+data:
+  # CSV mode expects columns: image_path,label,source
+  manifest_csv: data/manifest.csv
+  # Directory mode expects root/class_name/*.jpg when manifest does not exist.
+  image_root: data/images
+  isic2019_metadata_csv: null
+  isic2019_image_dir: null
+  isic2020_metadata_csv: null
+  isic2020_image_dir: null
+  pad_ufes_metadata_csv: null
+  pad_ufes_image_dir: null
+  dermquest_image_dir: null

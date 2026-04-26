@@ -1,0 +1,1 @@
+This generated implementation is provided as a fresh research reproduction scaffold. The linked GitHub repository is GPL-3.0 licensed; do not directly copy its source into proprietary code without checking license obligations. This package implements the described method independently but follows the architecture described in the paper and repository listing.
