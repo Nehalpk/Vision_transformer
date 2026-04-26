@@ -11,5 +11,5 @@ Model Architecture
 
 Architecture: Vision Transformer (ViT)
 Depth: 12 Transformer layers
-Task: Multi-class classification (4 classes)
+Task: Multi-class classification (4 classes).
 Use hdfnet_full_project
