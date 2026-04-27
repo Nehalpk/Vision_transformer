@@ -34,7 +34,7 @@ def manifest_from_folder(root: str | Path, classes: list[str] | None = None) -> 
 
 
 def build_isic2019_manifest(metadata_csv: str | Path, image_dir: str | Path) -> pd.DataFrame:
-    """Build manifest for ISIC 2019 ground-truth CSV with one-hot diagnosis columns."""
+   
     meta = pd.read_csv(metadata_csv)
     image_dir = Path(image_dir)
     rows = []
@@ -54,7 +54,7 @@ def build_isic2019_manifest(metadata_csv: str | Path, image_dir: str | Path) -> 
 
 
 def build_isic2020_manifest(metadata_csv: str | Path, image_dir: str | Path) -> pd.DataFrame:
-    """Build manifest for ISIC 2020 train CSV. Keeps MEL and maps benign examples to BKL if no detailed label exists."""
+  
     meta = pd.read_csv(metadata_csv)
     image_dir = Path(image_dir)
     rows = []
