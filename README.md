@@ -1,6 +1,6 @@
 # HDFNet Skin Lesion Classification —
 
-This project implements thE pipeline: preprocessing, class-aware selective augmentation, ALC-VGG16, DFE-ResNet50, dynamic-patching ViT, feature fusion, HDFNet classification, ROC/confusion-matrix evaluation, and Grad-CAM.
+This project implements the pipeline: preprocessing, class-aware selective augmentation, ALC-VGG16, DFE-ResNet50, dynamic-patching ViT, feature fusion, HDFNet classification, ROC/confusion-matrix evaluation, and Grad-CAM.
 
 The uploaded CODE USES four-class dermoscopic classifier for **BKL, MEL, NV, BCC** using 150×150×3 images, class-aware selective augmentation, a customized VGG-16 branch, a ResNet-50 branch with dermatological attention, a dynamic-patching ViT branch, and a final HDFNet classifier over a 1536-dimensional fused feature vector.
 
