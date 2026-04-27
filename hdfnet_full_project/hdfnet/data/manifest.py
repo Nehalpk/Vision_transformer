@@ -54,7 +54,7 @@ def build_isic2019_manifest(metadata_csv: str | Path, image_dir: str | Path) -> 
 
 
 def build_isic2020_manifest(metadata_csv: str | Path, image_dir: str | Path) -> pd.DataFrame:
-
+  
     meta = pd.read_csv(metadata_csv)
     image_dir = Path(image_dir)
     rows = []
